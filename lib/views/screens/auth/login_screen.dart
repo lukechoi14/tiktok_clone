@@ -1,10 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:tiktok_clone/constants.dart';
+import 'package:tiktok_clone/views/widgets/text_input_field.dart';
 
 class LoginScreen extends StatelessWidget {
-  const LoginScreen({Key? key}) : super(key: key);
+  LoginScreen({Key? key}) : super(key: key);
 
+  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,7 +30,11 @@ class LoginScreen extends StatelessWidget {
               ),
               const SizedBox(height: 25,),
               Container(
-                child: ,
+                child: TextInputField(
+                  controller: _emailController,
+                  labelText: "Email",
+                  icon: Icons.email,
+                ),
               )
             ],
           )),

@@ -5,13 +5,13 @@ class TextInputField extends StatelessWidget {
   final TextEditingController controller;
   final String labelText;
   final bool isObscure;
-  final IconData icon,
-  const TextInputField({Key? key, required this.controller, required this.labelText, required this.isObscure, required this.icon}) : super(key: key);
+  final IconData icon;
+  const TextInputField({Key? key, required this.controller, required this.labelText, this.isObscure=false, required this.icon}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return TextField(
-      controller: ,
+      controller: controller,
       decoration: InputDecoration(
         labelText: labelText,
         prefixIcon: Icon(icon),
