@@ -22,7 +22,7 @@ class AuthController extends GetxController {
       if(username.isNotEmpty&& email.isNotEmpty && password.isNotEmpty && image !=null) {
         //save out user to out auth and firebase firestore
         UserCredential cred = await firebaseAuth.createUserWithEmailAndPassword(email: email, password: password);
-        _uploadeToStorage(image);
+        String downloadUrl = await _uploadToStorage(image);
       }
     } catch(e) {
       Get.snackbar('Error creating account', e.toString());
