@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:tiktok_clone/constants.dart';
+import 'package:tiktok_clone/controllers/auth_controller.dart';
 import 'package:tiktok_clone/views/widgets/text_input_field.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -47,6 +48,7 @@ class LoginScreen extends StatelessWidget {
                   controller: _passwordController,
                   labelText: "Password",
                   icon: Icons.lock,
+                  isObscure: true,
                 ),
               ),
               const SizedBox(height: 30,),
@@ -58,7 +60,7 @@ class LoginScreen extends StatelessWidget {
                   borderRadius: BorderRadius.circular(5),
                 ),
                 child: InkWell(onTap:() {
-                  print('login');
+                  authController.loginUser(_emailController.text, _passwordController.text);
                 },child: const Center(child: Text("Login",style: TextStyle(fontSize: 20,fontWeight: FontWeight.w700),))),
               ),
               const SizedBox(height: 15,),
