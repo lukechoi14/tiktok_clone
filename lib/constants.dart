@@ -4,6 +4,13 @@ import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'controllers/auth_controller.dart';
 
+List pages = [
+  Text("HomeScreen"),
+  Text("Search page"),
+  Text("Add page screen"),
+  Text("Message screen"),
+  Text("Profile screen"),
+];
 // COLORS
 const backgroundColor = Colors.black;
 var buttonColor = Colors.red[400];

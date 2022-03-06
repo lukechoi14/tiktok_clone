@@ -49,12 +49,7 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ],
       ),
-      body: Center(child: InkWell(onTap: ()=>authController.signOut(),child: Container(
-        height: 50,
-        width: 50,
-        color: Colors.red,
-        child: Center(child: Text("hello"),),
-      ),),),
+      body: pages[pageIdx]
     );
   }
 }
