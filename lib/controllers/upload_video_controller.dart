@@ -20,6 +20,18 @@ class UploadVideoController extends GetxController {
     return downloadUrl;
   }
 
+  _getThumbnail(String videoPath) async {
+    final thumbnail = await VideoCompress.getFileThumbnail(videoPath);
+    return thumbnail;
+  }
+
+  Future<String> _uploadImageToStorage(String id, String videoPath) async{
+    Reference ref = firebaseStorage.ref().child('thumbnail').child(id);
+    UploadTask uploadTask = ref.putFile(await _getThumbnail(videoPath));
+    TaskSnapshot snap = await uploadTask;
+    String downloadUrl = await snap.ref.getDownloadURL();
+    return downloadUrl;
+  }
   //upload videos
   uploadVideo(String songName, String caption, String videoPath) async {
     try {
@@ -29,7 +41,8 @@ class UploadVideoController extends GetxController {
       // get id
       var allDocs = await firestore.collection('videos').get();
       int len = allDocs.docs.length;
-      _uploadVideoToStorage("Video $len", videoPath);
+      String videoUrl = await _uploadVideoToStorage("Video $len", videoPath);
+      String thumbnail = await _uploadImageToStorage("Video $len", videoPath);
     } catch (e) {}
   }
 }
