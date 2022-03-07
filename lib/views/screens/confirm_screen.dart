@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:tiktok_clone/views/widgets/text_input_field.dart';
 import 'package:video_player/video_player.dart';
 
 class ConfirmScreen extends StatefulWidget {
@@ -82,18 +83,18 @@ class _ConfirmScreenState extends State<ConfirmScreen> {
                   const SizedBox(
                     height: 10,
                   ),
-                  ElevatedButton(
-                      onPressed: () => uploadVideoController.uploadVideo(
-                          _songController.text,
-                          _captionController.text,
-                          widget.videoPath),
-                      child: const Text(
-                        'Share!',
-                        style: TextStyle(
-                          fontSize: 20,
-                          color: Colors.white,
-                        ),
-                      ))
+                  // ElevatedButton(
+                  //     onPressed: () => uploadVideoController.uploadVideo(
+                  //         _songController.text,
+                  //         _captionController.text,
+                  //         widget.videoPath),
+                  //     child: const Text(
+                  //       'Share!',
+                  //       style: TextStyle(
+                  //         fontSize: 20,
+                  //         color: Colors.white,
+                  //       ),
+                  //     ))
                 ],
               ),
             )
