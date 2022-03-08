@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:tiktok_clone/views/widgets/video_player_item.dart';
 import 'package:video_player/video_player.dart';
-
+import 'package:get/get.dart';
+import '../../controllers/video_controller.dart';
 import '../widgets/circle_animation.dart';
 
 class VideoScreen extends StatelessWidget {
-  const VideoScreen({Key? key}) : super(key: key);
+  VideoScreen({Key? key}) : super(key: key);
 
+  final VideoController videoController = Get.put(VideoController());
   buildProfile(String profilePhoto) {
     return SizedBox(
       width: 60,
