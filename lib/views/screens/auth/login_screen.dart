@@ -1,7 +1,5 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:tiktok_clone/constants.dart';
-import 'package:tiktok_clone/controllers/auth_controller.dart';
 import 'package:tiktok_clone/views/widgets/text_input_field.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -67,7 +65,7 @@ class LoginScreen extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text('Don\'t have an account? ',style: TextStyle(fontSize: 20),),
+                  const Text('Don\'t have an account? ',style: TextStyle(fontSize: 20),),
                   InkWell(onTap:(){
                     print("navigating user");
                   },child: Text('Register',style: TextStyle(fontSize: 20,color: buttonColor),)),

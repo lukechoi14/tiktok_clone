@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:tiktok_clone/controllers/auth_controller.dart';
 import 'package:tiktok_clone/views/widgets/text_input_field.dart';
 
 import '../../../constants.dart';
@@ -45,7 +44,7 @@ class SignupScreen extends StatelessWidget {
                       left: 80,
                       child: IconButton(onPressed: () {
                         authController.pickImage();
-                      }, icon: Icon(Icons.add_a_photo)))
+                      }, icon: const Icon(Icons.add_a_photo)))
                 ],
               ),
               const SizedBox(
@@ -122,7 +121,7 @@ class SignupScreen extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text(
+                  const Text(
                     'Already have an account? ',
                     style: TextStyle(fontSize: 20),
                   ),

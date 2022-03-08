@@ -6,7 +6,7 @@ import 'package:tiktok_clone/views/screens/add_video_screen.dart';
 import 'package:tiktok_clone/views/screens/video_screen.dart';
 import 'controllers/auth_controller.dart';
 
-List pages = [
+List pages = const [
   VideoScreen(),
   Text("Search page"),
   AddVideoScreen(),

@@ -9,7 +9,7 @@ import 'package:video_player/video_player.dart';
 class ConfirmScreen extends StatefulWidget {
   final File videoFile;
   final String videoPath;
-  ConfirmScreen({Key? key, required this.videoFile, required this.videoPath}) : super(key: key);
+  const ConfirmScreen({Key? key, required this.videoFile, required this.videoPath}) : super(key: key);
 
   @override
   State<ConfirmScreen> createState() => _ConfirmScreenState();

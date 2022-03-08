@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:tiktok_clone/views/widgets/video_player_item.dart';
 import 'package:video_player/video_player.dart';
@@ -26,13 +25,43 @@ class VideoScreen extends StatelessWidget {
             child: ClipRRect(
               borderRadius: BorderRadius.circular(25),
               child: Image(
-                image: NetworkImage(profilePhoto),
+                image: NetworkImage('https://images.unsplash.com/photo-1646243532538-67f6316f3c9d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80'),
                 fit: BoxFit.cover,
               ),
             ),
           ),
         )
       ]),
+    );
+  }
+
+  buildMusicAlbum(String profilePhoto) {
+    return SizedBox(
+      width: 60,
+      height: 60,
+      child: Column(
+        children: [
+          Container(
+              padding: const EdgeInsets.all(11),
+              height: 50,
+              width: 50,
+              decoration: BoxDecoration(
+                  gradient: const LinearGradient(
+                    colors: [
+                      Colors.grey,
+                      Colors.white,
+                    ],
+                  ),
+                  borderRadius: BorderRadius.circular(25)),
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(25),
+                child: Image(
+                  image: NetworkImage('https://images.unsplash.com/photo-1646243532538-67f6316f3c9d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80'),
+                  fit: BoxFit.cover,
+                ),
+              ))
+        ],
+      ),
     );
   }
 

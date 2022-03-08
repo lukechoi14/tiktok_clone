@@ -27,7 +27,7 @@ class AuthController extends GetxController {
     if(user == null){
       Get.offAll(()=>LoginScreen());
     } else {
-      Get.offAll(()=>HomeScreen());
+      Get.offAll(()=>const HomeScreen());
     }
   }
   void pickImage() async {
