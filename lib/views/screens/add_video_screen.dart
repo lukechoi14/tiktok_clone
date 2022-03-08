@@ -12,18 +12,18 @@ class AddVideoScreen extends StatelessWidget {
   pickVideo(ImageSource src, BuildContext context) async {
     final video = await ImagePicker().pickVideo(source: src);
     if (video != null) {
-      // Get.to(ConfirmScreen(
-      //   videoFile: File(video.path),
-      //   videoPath: video.path,
-      // ));
-      Navigator.of(context).push(
-        MaterialPageRoute(
-          builder: (context) => ConfirmScreen(
-            videoFile: File(video.path),
-            videoPath: video.path,
-          ),
-        ),
-      );
+      Get.to(ConfirmScreen(
+        videoFile: File(video.path),
+        videoPath: video.path,
+      ));
+      // Navigator.of(context).push(
+      //   MaterialPageRoute(
+      //     builder: (context) => ConfirmScreen(
+      //       videoFile: File(video.path),
+      //       videoPath: video.path,
+      //     ),
+      //   ),
+      // );
     }
   }
 
