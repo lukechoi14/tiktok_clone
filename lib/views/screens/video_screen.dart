@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tiktok_clone/constants.dart';
+import 'package:tiktok_clone/views/screens/comment_screen.dart';
 import 'package:tiktok_clone/views/widgets/video_player_item.dart';
 import 'package:video_player/video_player.dart';
 import 'package:get/get.dart';
@@ -162,7 +163,7 @@ class VideoScreen extends StatelessWidget {
                                   Column(
                                     children: [
                                       InkWell(
-                                          onTap: () {},
+                                          onTap: () {Get.to(CommentScreen());},
                                           child: Icon(
                                             Icons.comment,
                                             size: 40,
