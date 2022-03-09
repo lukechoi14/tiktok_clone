@@ -27,7 +27,7 @@ class VideoScreen extends StatelessWidget {
             child: ClipRRect(
               borderRadius: BorderRadius.circular(25),
               child: Image(
-                image: NetworkImage('https://images.unsplash.com/photo-1646243532538-67f6316f3c9d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80'),
+                image: NetworkImage(profilePhoto),
                 fit: BoxFit.cover,
               ),
             ),
@@ -58,7 +58,7 @@ class VideoScreen extends StatelessWidget {
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(25),
                 child: Image(
-                  image: NetworkImage('https://images.unsplash.com/photo-1646243532538-67f6316f3c9d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80'),
+                  image: NetworkImage(profilePhoto),
                   fit: BoxFit.cover,
                 ),
               ))
@@ -138,7 +138,7 @@ class VideoScreen extends StatelessWidget {
                               child: Column(
                                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                                 children: [
-                                  buildProfile('string url'),
+                                  buildProfile(data.profilePhoto),
                                   Column(
                                     children: [
                                       InkWell(
@@ -152,7 +152,7 @@ class VideoScreen extends StatelessWidget {
                                         height: 7,
                                       ),
                                       Text(
-                                        '2,200',
+                                        data.likes.length.toString(),
                                         style: const TextStyle(
                                             fontSize: 20, color: Colors.white),
                                       )
@@ -171,7 +171,7 @@ class VideoScreen extends StatelessWidget {
                                         height: 7,
                                       ),
                                       Text(
-                                        '2',
+                                        data.commentCount.toString(),
                                         style: const TextStyle(
                                             fontSize: 20, color: Colors.white),
                                       )
@@ -190,13 +190,13 @@ class VideoScreen extends StatelessWidget {
                                         height: 7,
                                       ),
                                       Text(
-                                        '2',
+                                        data.shareCount.toString(),
                                         style: const TextStyle(
                                             fontSize: 20, color: Colors.white),
                                       )
                                     ],
                                   ),
-                                  CircleAnimation(child: buildMusicAlbum('profile photo'))
+                                  CircleAnimation(child: buildMusicAlbum(data.profilePhoto))
                                 ],
                               ),
                             )
