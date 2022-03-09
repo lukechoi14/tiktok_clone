@@ -23,7 +23,7 @@ class CommentScreen extends StatelessWidget {
                         return ListTile(
                           leading: CircleAvatar(
                             backgroundColor: Colors.black,
-                            backgroundImage: NetworkImage('profile photo'),
+                            backgroundImage: NetworkImage('https://images.unsplash.com/photo-1646678670690-4917b0816af4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80'),
                           ),
                           title: Row(
                             children: [
@@ -35,7 +35,7 @@ class CommentScreen extends StatelessWidget {
                                     fontWeight: FontWeight.w700),
                               ),
                               Text(
-                                'comment description',
+                                ' comment',
                                 style: const TextStyle(
                                     fontSize: 20,
                                     color: Colors.white,
@@ -78,10 +78,10 @@ class CommentScreen extends StatelessWidget {
                       labelText: 'Comment',
                       labelStyle: TextStyle(fontSize: 20,color: Colors.white, fontWeight: FontWeight.w700),
                     enabledBorder: UnderlineInputBorder(
-                      borderSide: BorderSide(color: Colors.red)
+                      // borderSide: BorderSide(color: Colors.red)
                     ),
                     focusedBorder: UnderlineInputBorder(
-                        borderSide: BorderSide(color: Colors.red)
+                        // borderSide: BorderSide(color: Colors.red)
                     ),
                   ),
                 ),
