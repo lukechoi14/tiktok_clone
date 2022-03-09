@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tiktok_clone/constants.dart';
 import 'package:tiktok_clone/views/widgets/video_player_item.dart';
 import 'package:video_player/video_player.dart';
 import 'package:get/get.dart';
@@ -142,11 +143,11 @@ class VideoScreen extends StatelessWidget {
                                   Column(
                                     children: [
                                       InkWell(
-                                          onTap: () {},
+                                          onTap: () {videoController.likeVideo(data.id);},
                                           child: Icon(
                                             Icons.favorite,
                                             size: 40,
-                                            color: Colors.red,
+                                            color: data.likes.contains(authController.user.uid)?Colors.red:Colors.white,
                                           )),
                                       SizedBox(
                                         height: 7,
@@ -196,7 +197,8 @@ class VideoScreen extends StatelessWidget {
                                       )
                                     ],
                                   ),
-                                  CircleAnimation(child: buildMusicAlbum(data.profilePhoto))
+                                  //CIRCLE ANIMATION FALSE BECAUSE MEMORY ISSUE
+                                  // CircleAnimation(child: buildMusicAlbum(data.profilePhoto))
                                 ],
                               ),
                             )
