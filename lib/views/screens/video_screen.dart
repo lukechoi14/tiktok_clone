@@ -163,7 +163,7 @@ class VideoScreen extends StatelessWidget {
                                   Column(
                                     children: [
                                       InkWell(
-                                          onTap: () {Get.to(CommentScreen());},
+                                          onTap: () {Get.to(CommentScreen(id:data.id));},
                                           child: Icon(
                                             Icons.comment,
                                             size: 40,
