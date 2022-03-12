@@ -8,6 +8,12 @@ class ProfileController extends GetxController {
   Map<String, dynamic> get user => _user.value;
 
   Rx<String> _uid = "".obs;
+
+  updateUserId(String uid) {
+    _uid.value = uid;
+    getUserData();
+  }
+
   getUserData() async {
     List<String> thumbnails = [];
     var myVideos = await firestore
