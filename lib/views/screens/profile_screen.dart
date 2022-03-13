@@ -32,6 +32,23 @@ class _ProfileScreenState extends State<ProfileScreen> {
     child: CircularProgressIndicator(),
     );
     }
-    return Scaffold();});
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.black12,
+        leading: const Icon(
+          Icons.person_add_alt_1_outlined,
+        ),
+        actions: const [
+          Icon(Icons.more_horiz),
+        ],
+        title: Text(
+          controller.user['name'],
+          style: const TextStyle(
+            fontWeight: FontWeight.bold,
+            color: Colors.white,
+          ),
+        ),
+      ),
+    );});
   }
 }
