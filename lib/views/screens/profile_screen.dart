@@ -24,6 +24,14 @@ class _ProfileScreenState extends State<ProfileScreen> {
   }
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return GetBuilder<ProfileController>(
+        init: ProfileController(),
+    builder: (controller) {
+    if (controller.user.isEmpty) {
+    return const Center(
+    child: CircularProgressIndicator(),
+    );
+    }
+    return Scaffold();});
   }
 }
