@@ -49,6 +49,13 @@ class _ProfileScreenState extends State<ProfileScreen> {
           ),
         ),
       ),
+      body: SafeArea(
+        child: SingleChildScrollView(
+          child: Column(
+            children: [],
+          ),
+        ),
+      ),
     );});
   }
 }
