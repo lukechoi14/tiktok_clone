@@ -2,6 +2,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import '../../constants.dart';
 import '../../controllers/profile_controller.dart';
 
 class ProfileScreen extends StatefulWidget {
@@ -150,6 +151,40 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     ],
                   ),
                 ],
+              ),
+              const SizedBox(
+                height: 15,
+              ),
+              Container(
+                width: 140,
+                height: 47,
+                decoration: BoxDecoration(
+                  border: Border.all(
+                    color: Colors.black12,
+                  ),
+                ),
+                child: Center(
+                  child: InkWell(
+                    onTap: () {
+                      if (widget.uid == authController.user.uid) {
+                        authController.signOut();
+                      } else {
+                        controller.followUser();
+                      }
+                    },
+                    child: Text(
+                      widget.uid == authController.user.uid
+                          ? 'Sign Out'
+                          : controller.user['isFollowing']
+                          ? 'Unfollow'
+                          : 'Follow',
+                      style: const TextStyle(
+                        fontSize: 15,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                ),
               ),
             ],
           ),
