@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -70,6 +71,84 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       ),
                     ),
                   )
+                ],
+              ),
+              const SizedBox(
+                height: 15,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Column(
+                    children: [
+                      Text(
+                        controller.user['following'],
+                        style: const TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      const SizedBox(height: 5),
+                      const Text(
+                        'Following',
+                        style: TextStyle(
+                          fontSize: 14,
+                        ),
+                      ),
+                    ],
+                  ),
+                  Container(
+                    color: Colors.black54,
+                    width: 1,
+                    height: 15,
+                    margin: const EdgeInsets.symmetric(
+                      horizontal: 15,
+                    ),
+                  ),
+                  Column(
+                    children: [
+                      Text(
+                        controller.user['followers'],
+                        style: const TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      const SizedBox(height: 5),
+                      const Text(
+                        'Followers',
+                        style: TextStyle(
+                          fontSize: 14,
+                        ),
+                      ),
+                    ],
+                  ),
+                  Container(
+                    color: Colors.black54,
+                    width: 1,
+                    height: 15,
+                    margin: const EdgeInsets.symmetric(
+                      horizontal: 15,
+                    ),
+                  ),
+                  Column(
+                    children: [
+                      Text(
+                        controller.user['likes'],
+                        style: const TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      const SizedBox(height: 5),
+                      const Text(
+                        'Likes',
+                        style: TextStyle(
+                          fontSize: 14,
+                        ),
+                      ),
+                    ],
+                  ),
                 ],
               ),
             ],
