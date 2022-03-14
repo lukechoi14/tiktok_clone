@@ -186,6 +186,29 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   ),
                 ),
               ),
+              const SizedBox(
+                height: 25,
+              ),
+              // video list
+              GridView.builder(
+                shrinkWrap: true,
+                physics: const NeverScrollableScrollPhysics(),
+                itemCount: controller.user['thumbnails'].length,
+                gridDelegate:
+                const SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2,
+                  childAspectRatio: 1,
+                  crossAxisSpacing: 5,
+                ),
+                itemBuilder: (context, index) {
+                  String thumbnail =
+                  controller.user['thumbnails'][index];
+                  return CachedNetworkImage(
+                    imageUrl: thumbnail,
+                    fit: BoxFit.cover,
+                  );
+                },
+              )
             ],
           ),
         ),
