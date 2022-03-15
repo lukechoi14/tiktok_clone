@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:tiktok_clone/views/screens/auth/login_screen.dart';
 import 'package:tiktok_clone/views/widgets/text_input_field.dart';
 
 import '../../../constants.dart';
-
+import 'package:get/get.dart';
 class SignupScreen extends StatelessWidget {
   SignupScreen({Key? key}) : super(key: key);
   final TextEditingController _emailController = TextEditingController();
@@ -127,7 +128,7 @@ class SignupScreen extends StatelessWidget {
                   ),
                   InkWell(
                       onTap: () {
-                        print("navigating user");
+                       Get.off(LoginScreen());
                       },
                       child: Text(
                         'Login',
